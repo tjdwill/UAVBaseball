@@ -90,13 +90,13 @@ def play_ball(drone: Drone):
             consec_detect = 0
 
     # Play Baseball Song
-    """drone.drone_buzzer(C4, NOTE_DURATION)
+    drone.drone_buzzer(C4, NOTE_DURATION)
     drone.drone_buzzer(E4, NOTE_DURATION)
     drone.drone_buzzer(G4, NOTE_DURATION)
     drone.drone_buzzer(C5, NOTE_DURATION // 2)
     drone.drone_buzzer(REST, NOTE_DURATION)
     drone.drone_buzzer(G4, NOTE_DURATION)
-    drone.drone_buzzer(C5, 3 * NOTE_DURATION)"""
+    drone.drone_buzzer(C5, 3 * NOTE_DURATION)
 
     print("Play Ball!\n")
     time.sleep(SLEEP_TIME)
@@ -265,6 +265,6 @@ def move(current_base: int, drone: Drone) -> int:
 
 
 if __name__ == '__main__':
-    logging.getLogger().setLevel(logging.INFO)
+    # logging.getLogger().setLevel(logging.INFO)
     with TDrone() as t_drone:
         play_ball(t_drone)
