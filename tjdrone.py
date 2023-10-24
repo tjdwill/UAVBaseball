@@ -10,7 +10,6 @@ class TDrone(Drone):
     """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        # self.connected = self.isOpen()
 
     def __enter__(self):
         # Pair the drone
@@ -20,26 +19,11 @@ class TDrone(Drone):
 
     def __exit__(self, exc_type, exc_value, exc_tb):
         self.land()
-        # self.set_drone_LED(255, 0, 0, 100)
-        # Shutdown Connection
         self.close()
-        # print(f"Connected?: {self.connected}")
 
         # Print Errors
         if exc_value is not None:
             print(exc_type, exc_value, exc_tb, sep='\n')
-
-    """
-        Testing Context Manager via Overloads
-
-        def open(self, portname=None):
-            print("OPEN: Opened!")
-            self.connected = True
-
-        def close(self):
-            print("CLOSE: Closing CoDroneEDU Connection.")
-            self.connected = False
-    """
 
     def __del__(self):
         # Overload to prevent close from being called twice.
@@ -47,7 +31,7 @@ class TDrone(Drone):
 
     def fire_start(self):
         """
-        Convenience method to block until key-input is entered.
+        Convenient method to block until key-input is entered.
         """
         start_key = 's'
         self.takeoff()
