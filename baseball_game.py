@@ -1,5 +1,12 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""baseball_game:
+
+A Series of functions to assist with the development of a drone baseball
+emulation program.
+
+Author: Terrance Williams
+"""
 
 
 # noinspection PyUnresolvedReferences
@@ -9,13 +16,6 @@ from pathlib import Path
 from codrone_edu.drone import *
 from tjdrone import TDrone
 
-"""baseball_game:
-
-A Series of functions to assist with the development of a drone baseball
-emulation program.
-
-Author: Terrance Williams
-"""
 
 # %% CONSTANTS
 PITCH_POWER, ROLL_POWER, THROTTLE_POWER = 15, 15, -25  # power and directions: forward, right, and down
@@ -29,7 +29,6 @@ HEIGHT_SWITCHES = 2  # Number of times relative height must switch (i.e. exceed 
 TOTAL_BASES: int = 4
 BTMRANGE_SENSOR_UNIT = 'cm'
 COLOR_DETECT_ATTEMPTS = 20
-
 
 # Notes
 C4 = Note.C4
@@ -45,19 +44,25 @@ BASE_1 = 1
 BASE_2 = 2
 BASE_3 = 3
 # Base Color mapping [color: (base_num, color_rgb)]
-base_color_mappings = {'green': (HOME, (0, 255, 0)),
-                       'red': (BASE_1, (255, 0, 0)),
-                       'yellow': (BASE_2, (255, 255, 0)),
-                       'blue': (BASE_3, (0, 0, 255))}
-base_number_mappings = {HOME: 'Home',
-                        BASE_1: 'First',
-                        BASE_2: 'Second',
-                        BASE_3: 'Third'}
-hit_mappings = {'miss': 0,
-                'single': 1,
-                'double': 2,
-                'triple': 3,
-                'home run': 4}
+base_color_mappings = {
+    'green': (HOME, (0, 255, 0)),
+    'red': (BASE_1, (255, 0, 0)),
+    'yellow': (BASE_2, (255, 255, 0)),
+    'blue': (BASE_3, (0, 0, 255))
+}
+base_number_mappings = {
+    HOME: 'Home',
+    BASE_1: 'First',
+    BASE_2: 'Second',
+    BASE_3: 'Third'
+}
+hit_mappings = {
+    'miss': 0,
+    'single': 1,
+    'double': 2,
+    'triple': 3,
+    'home run': 4
+}
 base_waypoints = {}
 
 # %% Logging
