@@ -1,6 +1,8 @@
 # CoDrone EDU Baseball
 This project aims to emulate running bases reminiscent to the game of baseball using Robolink's CoDrone EDU.
 
+## Project Videos
+
 - [Learning the Drone](https://youtu.be/gT2dIVrDKJQ)
 - [Writing a Context Manager for the CoDrone EDU](https://youtu.be/8owxnUHKqYI?si=ogO2HIm1DhJISbKO)
 - [Identifying Bases](https://youtu.be/n5RHxK8Ozew)
