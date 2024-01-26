@@ -79,7 +79,8 @@ logging.basicConfig(filename=logfile, encoding='utf-8', level=logging.DEBUG)
 def low_hover(
         drone: TDrone,
         min_height=MIN_RELATIVE_HEIGHT,
-        max_height=MAX_RELATIVE_HEIGHT) -> float:
+        max_height=MAX_RELATIVE_HEIGHT
+) -> float:
     """Hover the drone within some relative height range"""
     drone.relative_takeoff()
     drone.hover(SLEEP_TIME)
@@ -101,13 +102,17 @@ def low_hover(
 
 # noinspection PyPep8Naming
 def calibrate_bases(drone: TDrone) -> dict:
+    """
+    Load or generate the waypoints for the bases.
+    Also loads the color classifier.
+    """
     this_func = 'calibrate_bases'
     # noinspection PyUnusedLocal
     color_path = Path('../color_data')
 
     # Load color classifier
     if not color_path.is_dir():
-        print("Could not find color_data directory. Using defaults")
+        print("Could not find color_data directory. Using default color classifier.")
         drone.load_classifier()
     else:
         drone.load_classifier(dataset=color_path)
