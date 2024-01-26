@@ -2,12 +2,13 @@
 This project aims to emulate running bases reminiscent to the game of baseball using Robolink's CoDrone EDU.
 
 - [Learning the Drone](https://youtu.be/gT2dIVrDKJQ)
+- [Writing a Context Manager for the CoDrone EDU](https://youtu.be/8owxnUHKqYI?si=ogO2HIm1DhJISbKO)
 - [Identifying Bases](https://youtu.be/n5RHxK8Ozew)
 - [Rounding Multiple Bases](https://youtu.be/xHTBC7PvPYI)
 
 ## Retrospective (26 January 2024)
 
-This project was unusual in the sense that every subsystem worked individually but not together. As explained in the third video, the drone was able to take off, land, sense the correct base, and then fly the next one in the correct direction. However, when multiple bases are traversed, there an error typically arose after first base. I've looked over the program logic multiple times and am unable to see the source of the error w.r.t software, so I am inclined to conclude that the problem is based in the hardware. It is possible that crashes during testing could have affected the drone such that the program would not work properly with this specific CoDrone EDU but may work with another one. The drone itself, however, is still operable, so if it is indeed a hardware issue, it is likely a subtle one. If it is _not_ a hardware issue, then that means there is a gap in my understanding of how the drone works (which is _certainly_ plausible).
+This project was unusual in the sense that every subsystem worked individually but not together. As explained in the _Rounding Multiple Bases_ (Project 3) video, the drone was able to take off, land, sense the correct base, and then fly the next one in the correct direction. However, when multiple bases are traversed, there an error typically arose after first base. I've looked over the program logic multiple times and am unable to see the source of the error w.r.t software, so I am inclined to conclude that the problem is based in the hardware. It is possible that crashes during testing could have affected the drone such that the program would not work properly with this specific CoDrone EDU but may work with another one. The drone itself, however, is still operable, so if it is indeed a hardware issue, it is likely a subtle one. If it is _not_ a hardware issue, then that means there is a gap in my understanding of how the drone works (which is _certainly_ plausible).
 
 I will not consider this project a success in terms of delivering the desired result. However, the process of working on this project led to palpable growth as a programmer and a system designer. I was able to successfully implement a context manager, extending the capabilities of the manufacturer's code. To me, this reinforced the value of tooling when it comes to thinking about a problem. Abstracting away the details of pairing and disconnecting the drone allowed more time and mental energy to be spent on the more abstract aspects of the project's code. It also safeguarded against errors.
 
