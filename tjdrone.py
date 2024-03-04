@@ -1,3 +1,11 @@
+"""
+@author: Terrance Williams
+@date: 12 September 2023
+@last_modified: 4 March 2024
+@title: TDrone: A Context Manager for the CoDrone EDU
+"""
+
+
 from codrone_edu.drone import Drone
 import time
 
@@ -60,7 +68,7 @@ class TDrone(Drone):
         Convenience method to block until key-input is entered.
         """
         start_key = 's'
-        self.relative_takeoff()
+        self.takeoff()
         self.hover()
         ready = False
         # self.set_drone_LED(0, 0, 255, 100)
@@ -80,6 +88,6 @@ class TDrone(Drone):
         # self.hover(1)
         for _ in range(2):
             self.goto_waypoint([0.00, 0.00, 0.], 0.5)
-            print(self.get_position_data())
+            # print(self.get_position_data())
         self.hover(2.5)
         # self.goto_waypoint([0, 0, 0], 0.75)
